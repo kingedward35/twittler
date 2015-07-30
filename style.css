@@ -3,7 +3,8 @@
 body {
   width: 800px;
   margin: 0 auto;
-  background: linear-gradient(135deg, 
+  background: #507cc9;
+  /*background: linear-gradient(135deg, 
     #d2dfed 0%,
     #c8d7eb 26%,
     #bed0ea 51%,
@@ -11,7 +12,7 @@ body {
     #afc7e8 62%,
     #bad0ef 75%,
     #99b5db 88%,
-    #799bc8 100%); 
+    #799bc8 100%); */
   font-size: 20px;
 
 
@@ -23,6 +24,7 @@ a {
 
 
 .created {
+  font-size: 16px;
   text-align: right;
   float: right
 }
@@ -50,7 +52,7 @@ header {
 }
 
 button {
-  height: 70px;
+  height: 50px;
   width: 150px;
   font-size: 18px;
   float: right;
