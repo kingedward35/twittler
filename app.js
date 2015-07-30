@@ -1,23 +1,27 @@
 
-
 $(document).ready(function(){
+
   var $content = $('.content');
+  var $createdAt;
+  var tweet;
+  var $tweet;
+  var $user;
+  var index = streams.home.length - 1;
 
-  function showTweets(data) {
-    $content.html('');
-    var $tweet = $('<div class="tweet"></div>');
-    var store = streams.home.length - 1;
+  function intialShowing(username) {
 
-    if (data === 'all') {
-      streams = streams.home;
-    } else if (data) {
-      streams = streams.users[data];
+    if (username === 'home') {
+      index = streams.home;
+    } else if (username) {
+      index === streams.users[username];
     }
 
-    for (var i = store; i >= 0; i -= 1) {
-      var tweet = streams.home[i];
-
-
+    $content.html('');
+    for (var i = index.length - 1; i >= 0; i -= 1) {
+    
+      tweet = streams.home[i];
+      $tweet = $('<div></div>');
+         
       $tweet.appendTo($content);
 
       $user = $('<a></a>');
@@ -29,107 +33,67 @@ $(document).ready(function(){
       $user.text('@' + tweet.user);
       
       $tweet.append(': ' + tweet.message);
-      
+      $tweet.appendTo($content);
 
       $createdAt = $('<span class="created"></span>');
       $time = moment(tweet.created_at).fromNow();
       $createdAt.text($time);
       $createdAt.appendTo($tweet);
-
-      $tweet.appendTo($content);
-
-    } 
-
-    $('.username').on('click', function() {
-      showTweets($(this).data('user'));
+  
+    }
+    $('button').on('click', function() {
+      intialShowing();
     });
+    
+    $('.username').on('click', showUserTweets);
+  }
+  intialShowing('home');
 
-    showTweets('all');
-
-    }
-
-});
-  
-/*    var tweet = $('<div></div>');
-    var $tweet = $('<div class="tweet"></div>');
-
-
-  function showTweets(object) {
-
+  function showUserTweets() {
+    var username = $(this).data('user');
+    var length = streams.users[username].length - 1;
     $content.html('');
-
-
-    if (object === 'all') {
-      streams = streams.home;
-    } else if (object) {
-      streams = streams.users[object];
-    }
-
-  
-    while(index >= 0){
-     
+    
+    for (var i = length; i >= 0; i -= 1 ) {
+      var message = streams.users[username][i].message;
+      var createdAt = moment(streams.users[username][i].created_at).fromNow();
+      
+      $tweet = $('<div></div>');
+         
       $tweet.appendTo($content);
 
       $user = $('<a></a>');
       
-      $user.attr({'href': '#', 'data-user': tweet.user, 'class': 'username'});
+      $user.attr({'href': '#', 'data-user': username, 'class': 'username'});
       
       $user.appendTo($tweet);
       
-      $user.text('@' + tweet.user);
+      $user.text('@' + username);
       
-      $tweet.append(': ' + tweet.message);
-      
+      $tweet.append(': ' + message);
+      $tweet.appendTo($content);
 
       $createdAt = $('<span class="created"></span>');
       $time = moment(tweet.created_at).fromNow();
       $createdAt.text($time);
       $createdAt.appendTo($tweet);
 
-      index -= 1;
-      }
-      /*
-      $('.username').on('click', function() {
-        showTweets($(this).data('user'));
-      });
-    */
+    }
 
-  //}
-/*
-  showTweets('all');
-  $('.tweet').on('click', function() {
-    showTweets('all');
-  });
+    $('.username').on('click', showUserTweets);
+
+  }
 
 });
 
 
-$(document).ready(function(){
-        var $body = $('body');
-        $body.html('');
 
-        /*window.onload = autoUpdate;
 
-        function autoUpdate() {
-          setTimeout('updatePage();' 15000);
-        }
 
-        function updatePage() {
-          window.location.href;
-        }
 
-        var index = streams.home.length - 1;
-        while(index >= 0){
-          var tweet = streams.home[index];
-          var $tweet = $('<div></div>');
-          $tweet.text('@' + tweet.user + ': ' + tweet.message);
-          $tweet.appendTo($body);
-          index -= 1;
-        }
 
-      });
 
-*/
+
 
 
 
