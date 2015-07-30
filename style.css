@@ -1,5 +1,8 @@
-body {
 
+
+body {
+  width: 800px;
+  margin: 0 auto;
   background: linear-gradient(135deg, 
     #d2dfed 0%,
     #c8d7eb 26%,
@@ -18,38 +21,48 @@ a {
   font-size: 22px;
 }
 
-.tweet {
-  
-  text-align: center;
-  
-}
 
 .created {
-  text-align: center;
+  text-align: right;
   float: right
 }
-
+.tweet {
+  height: 100%;
+  margin: 15px 0;
+}
+/*
 div {
-  
+  display: block;
   text-align: center;
   margin-top: 20px;
   margin-left: 5px;
   
-}
+}*/
 
 header {
   top: 50%;
   left: 50%;
+
   text-align: center;
   font-size: 40px;
   padding: 25px;
   margin: 25px;
 }
 
-/*button {
-  font-size: 35px;
+button {
+  height: 70px;
+  width: 150px;
+  font-size: 18px;
   float: right;
   padding: 10px;
   margin: 10px;
   border-radius: 5px;
-}*/
+}
+
+
+
+
+
+
+
+

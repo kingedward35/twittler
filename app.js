@@ -20,7 +20,7 @@ $(document).ready(function(){
     for (var i = index.length - 1; i >= 0; i -= 1) {
     
       tweet = streams.home[i];
-      $tweet = $('<div></div>');
+      $tweet = $('<div class="tweet"></div>');
          
       $tweet.appendTo($content);
 
@@ -41,12 +41,14 @@ $(document).ready(function(){
       $createdAt.appendTo($tweet);
   
     }
+
     $('button').on('click', function() {
       intialShowing();
     });
     
     $('.username').on('click', showUserTweets);
   }
+
   intialShowing('home');
 
   function showUserTweets() {
@@ -58,7 +60,7 @@ $(document).ready(function(){
       var message = streams.users[username][i].message;
       var createdAt = moment(streams.users[username][i].created_at).fromNow();
       
-      $tweet = $('<div></div>');
+      $tweet = $('<div class="tweet"></div>');
          
       $tweet.appendTo($content);
 
