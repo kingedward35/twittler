@@ -3,25 +3,13 @@
 body {
   width: 800px;
   margin: 0 auto;
-  background: #507cc9;
-  /*background: linear-gradient(135deg, 
-    #d2dfed 0%,
-    #c8d7eb 26%,
-    #bed0ea 51%,
-    #a6c0e3 51%,
-    #afc7e8 62%,
-    #bad0ef 75%,
-    #99b5db 88%,
-    #799bc8 100%); */
+  background: #6fbdf2;
   font-size: 20px;
-
-
 }
 
 a {
   font-size: 22px;
 }
-
 
 .created {
   font-size: 16px;
@@ -32,19 +20,11 @@ a {
   height: 100%;
   margin: 15px 0;
 }
-/*
-div {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 5px;
-  
-}*/
 
 header {
   top: 50%;
   left: 50%;
-
+  text-shadow: 2px 2px #630a0a;
   text-align: center;
   font-size: 40px;
   padding: 25px;
@@ -52,6 +32,13 @@ header {
 }
 
 button {
+  background: linear-gradient(to bottom, 
+    rgba(208,228,247,1) 0%,
+    rgba(115,177,231,1) 24%,
+    rgba(10,119,213,1) 50%,
+    rgba(83,159,225,1) 79%,
+    rgba(135,188,234,1) 100%);
+  text-shadow: 0.5px 0.5px #630a0a;
   height: 50px;
   width: 150px;
   font-size: 18px;
